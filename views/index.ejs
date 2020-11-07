@@ -124,17 +124,18 @@
         }
     </script>
     <h2 class="select-ins">Select Insurance</h2>
-    <form method="post">
-	    <select name="insurance">
-            <% insurances.forEach(function(insurance){ %>
-            <option value="<%= insurance.company %>"><%= insurance.company %></option>
-            <% }); %>
-        </select>
-        <button type="submit" onclick="location.href='users'">Submit</button>
-	</form>
+    <center>
+        <form method="post">
+    	    <select name="insurance">
+                <% insurances.forEach(function(insurance){ %>
+                <option value="<%= insurance.company %>"><%= insurance.company %></option>
+                <% }); %>
+            </select>
+            <button type="submit" onclick="location.href='users'">Submit</button>
+    	</form>
+    </center>
 
     <script src="drop.js"></script>
 
 </body>
-
 </html>
