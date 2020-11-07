@@ -46,12 +46,12 @@ router.post("/users", function(req, res) {
           port: 587,
           secure: false,
           auth: {
-            user: "networkingkr016@gmail.com",
-            pass: "Mohit@1504"
+            user: "xxxxxxxxxxxxx@gmail.com",
+            pass: "xxxxxxxxxxxxxx"
           }
         });
         var mailOptions = {
-            from: 'networkingkr016@gmail.com',
+            from: 'xxxxxxxxxxxxx@gmail.com',
             to: req.body.email,
             subject: 'Email Verification',
             text: 'Hello,\n\n' + 'Please verify your account by clicking the link: \nhttp:\/\/' + req.headers.host + '\/confirmation\/' + token.token + '.\n' 
