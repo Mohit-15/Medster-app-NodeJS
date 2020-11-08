@@ -1,3 +1,4 @@
+require('dotenv').config()
 var express = require("express"),
   mongoose = require("mongoose"),
   registration_router = express.Router(),

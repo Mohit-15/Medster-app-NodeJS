@@ -15,7 +15,7 @@ home_router.get('', function(req, res){
   });
 });
 
-home_router.post('', function(req, res){
+/*home_router.post('', function(req, res){
   var insurance_company = req.body;
   if(insurance_company){
     res.render('enter_details', {'insurance': insurance_company});
@@ -23,6 +23,6 @@ home_router.post('', function(req, res){
   return res.status(500).send({
     msg: "Invalid"
   });
-});
+});*/
 
 module.exports = home_router
