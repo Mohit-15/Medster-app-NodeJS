@@ -145,6 +145,13 @@
                 <label class="inputcity" for="exampleInputcity">City</label>
                 <input type="text" class="form-control" id="exampleInputcity" name="city" placeholder=" Enter City">
             </div>
+            <center>
+                <select name="insurance">
+                    <% insurances.forEach(function(insurance){ %>
+                    <option value="<%= insurance.company %>"><%= insurance.company %></option>
+                    <% }); %>
+                </select>
+            </center>
             <!-- <div class="form-group form-check">
                 <input type="checkbox" class="form-check-input" id="exampleCheck1">
                 <label style="color: #ffffff;" class="form-check-label" for="exampleCheck1">Let's GO</label>

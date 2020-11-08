@@ -1,3 +1,4 @@
+require('dotenv').config()
 var express = require("express"),
   app = express(),
   mongoose = require("mongoose"),
@@ -5,7 +6,7 @@ var express = require("express"),
   path = require('path'),
   bodyParser = require("body-parser");
 
-mongoose.connect("mongodb://localhost:27017/User", {
+mongoose.connect(process.env.HOST, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
   useCreateIndex: true

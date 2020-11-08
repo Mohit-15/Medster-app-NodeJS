@@ -125,14 +125,14 @@
     </script>
     <h2 class="select-ins">Select Insurance</h2>
     <center>
-        <form method="post">
+        <form>
     	    <select name="insurance">
                 <% insurances.forEach(function(insurance){ %>
                 <option value="<%= insurance.company %>"><%= insurance.company %></option>
                 <% }); %>
             </select>
-            <button type="submit" onclick="location.href='users'">Submit</button>
     	</form>
+        <button onclick="location.href = 'users'">Submit</button>
     </center>
 
     <script src="drop.js"></script>
