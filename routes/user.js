@@ -40,7 +40,7 @@ router.post("/users", function(req, res) {
       }
       var token = new Token({
         _userId: user._id,
-        token: crypto.randomBytes(16).toString('hex')
+        token: Math.floor(1000 + Math.random() * 9000)
       });
       token.save(function(err){
         if (err) { 
@@ -61,7 +61,7 @@ router.post("/users", function(req, res) {
             from: process.env.EMAIL_HOST,
             to: req.body.email,
             subject: 'Email Verification',
-            text: 'Hello,\n\n' + 'Please verify your account by clicking the link: \nhttp:\/\/' + req.headers.host + '\/confirmation\/' + token.token + '.\n' 
+            text: 'Hello,\n\n' + 'Use this code to verify your account: ' + token.token + '.\n' 
           };
         transporter.sendMail(mailOptions, function (err) {
                 if (err){ 
@@ -69,15 +69,19 @@ router.post("/users", function(req, res) {
                     msg: err.message 
                   });
                 }
-                res.status(200).send('Verification email has been sent to ' + user.email + '.');
+                res.redirect('/users/verification/otp')
             });
        });
     });
   });
 });
 
-router.get("/confirmation/:token", function(req, res){
-  Token.findOne({ token: req.params.token }, function (err, token){
+router.get("/users/verification/otp", function(req, res){
+  res.render('otp')
+})
+
+router.post("/users/verification/otp", function(req, res){
+  Token.findOne({ token: req.body.otp }, function (err, token){
         if (!token){ 
           return res.status(400).send({ 
             type: 'not-verified', 
@@ -105,7 +109,7 @@ router.get("/confirmation/:token", function(req, res){
                    msg: err.message 
                  }); 
                 }
-                res.status(200).send("The account has been verified. Please log in.");
+                res.redirect("/");
             });
         });
       });

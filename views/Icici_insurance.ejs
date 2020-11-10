@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha2/css/bootstrap.min.css"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+        integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/styles.css">
+    <title> Medster | ICICI</title>
+</head>
+
+<body style="background-color: #F28F32;">
+    <nav class="navbar custom-navbar fixed-top">
+        <div class="container" style="background-color:#F28F32">
+            <div class="navbar-brand">
+                <div class="brand-img">
+                    <img src="images/Group 28.svg" alt="" class="d-none d-md-block" height="60px">
+                    <img src="images/Group 17.svg" alt="" class="d-block d-md-none" height="70px">
+                </div>
+            </div>
+            <div class="nav ml-auto">
+                <div class="nav-link1 ">
+                    <a href="" class="connect-btn">Connect</a>
+                </div>
+                <div class="nav-link nav-line"></div>
+                <div class="nav-link" style="margin-left: 0.7rem; margin-right: -0.6rem">
+                    <button id="mobileNavBtn" class="menu"
+                        onclick="this.classList.toggle('opened');this.setAttribute('aria-expanded', this.classList.contains('opened'));openNav();"
+                        aria-label="Main Menu" style="border: none; outline: none;">
+                        <svg viewBox="0 0 100 100">
+                            <path class="line line1"
+                                d="M 20,29.000046 H 80.000231 C 80.000231,29.000046 94.498839,28.817352 94.532987,66.711331 94.543142,77.980673 90.966081,81.670246 85.259173,81.668997 79.552261,81.667751 75.000211,74.999942 75.000211,74.999942 L 25.000021,25.000058" />
+                            <path class="line line2" d="M 20,50 H 80" />
+                            <path class="line line3"
+                                d="M 20,70.999954 H 80.000231 C 80.000231,70.999954 94.498839,71.182648 94.532987,33.288669 94.543142,22.019327 90.966081,18.329754 85.259173,18.331003 79.552261,18.332249 75.000211,25.000058 75.000211,25.000058 L 25.000021,74.999942" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div id="mobileNav" class="nav-overlay d-none">
+        <div class="nav-inner" id="navInner">
+            <div class="container">
+                <div class="main-section">
+                    <div class="nav flex-column text-right">
+                        <li class="nav-item">
+                            <a class="nav-link" href="about-us">Take the tour</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="about-us">What is this again</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="about-us">Register yourself to be invited when this launches</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="about-us">Contact Us</a>
+                        </li>
+                    </div>
+                </div>
+                <div class="mobile-nav-footer">
+                    <hr>
+                    <div class="d-flex justify-content-center">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <style>
+        #mobileNav {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            z-index: 2;
+            left: 0;
+            top: 0;
+            background-color: #000000ba;
+            overflow-x: hidden;
+            transition: 350ms ease-in-out all;
+        }
+
+        #mobileNav .nav-inner {
+            position: absolute;
+            right: -30rem;
+            top: 0;
+            height: 100%;
+            width: 100%;
+            max-width: 25rem;
+            background-color: #ffffff;
+            padding-top: 30vh;
+            transition: 350ms ease-in-out all;
+        }
+
+        #mobileNav .nav-inner-open {
+            right: 0rem;
+            transition: 350ms ease-in-out all;
+        }
+
+        #mobileNav .nav-inner .main-section {
+            color: #000000;
+            font-family: "Poppins", sans-serif;
+            font-weight: 600;
+            padding-bottom: 25vh;
+        }
+
+        #mobileNav .nav-inner .main-section .nav-link {
+            color: #000000;
+        }
+
+        @media only screen and (max-width: 768px) {
+            #mobileNav .nav-inner .main-section .nav-link {
+                font-size: 1.4rem;
+            }
+        }
+    </style>
+    <script>
+        function openNav() {
+            document.getElementById("mobileNav").classList.toggle("d-none");
+            document.getElementById("navInner").classList.toggle("nav-inner-open")
+        }
+    </script>
+
+    <form method="POST">
+        <div class="form-grouped">
+            <div class="form-group">
+                <label class="inputemail" for="exampleInputEmail">Email</label>
+                <input type="email" class="form-control" id="exampleInputEmail1" name="email"
+                    aria-describedby="emailHelp" placeholder="Enter email here">
+                <small id="emailHelp" class="form-text text-muted">We only ask this to verify you're a real
+                    person.</small>
+            </div>
+            <div class="form-group">
+                <label class="inputname" for="exampleInputname1">Name</label>
+                <input type="text" class="form-control" id="exampleInputname1" name="name" placeholder=" Enter name">
+            </div>
+            <div class="form-group">
+                <label class="inputdob" for="exampleInputdob">DoB</label>
+                <input type="date" class="form-control" id="exampleInputdob" name="dob" placeholder=" Enter DoB">
+            </div>
+            <div class="form-group">
+                <label class="inputcity" for="exampleInputcity">City</label>
+                <input type="text" class="form-control" id="exampleInputcity" name="city" placeholder=" Enter City">
+            </div>
+            <div class="form-group">
+                <label for="insurance selected" class="insurer-label">Insurer</label><br>
+                <input type="text" value="ICICI Lombard" name="insurer" style="color: #7a7a7a;" readonly>
+            </div>
+            <!-- <div class="form-group form-check">
+            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+            <label style="color: #ffffff;" class="form-check-label" for="exampleCheck1">Let's GO</label>
+        </div> -->
+            <center>
+                <button type="submit" class="btn btn-primary mb-3 mt-3">Submit</button>
+            </center>
+        </div>
+    </form>
+
+</body>
+
+</html>
