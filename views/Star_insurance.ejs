@@ -8,8 +8,8 @@
         crossorigin="anonymous">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
         integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/style.css">
-    <title> Medster | Register </title>
+    <link rel="stylesheet" href="css/styles.css">
+    <title> Medster | Star </title>
 </head>
 
 <body style="background-color: #F28F32;">
@@ -22,7 +22,7 @@
                 </div>
             </div>
             <div class="nav ml-auto">
-                <div class="nav-link1 my-1">
+                <div class="nav-link1 ">
                     <a href="" class="connect-btn">Connect</a>
                 </div>
                 <div class="nav-link nav-line"></div>
@@ -128,8 +128,8 @@
         <div class="form-grouped">
             <div class="form-group">
                 <label class="inputemail" for="exampleInputEmail">Email</label>
-                <input type="email" class="form-control" id="exampleInputEmail1" name="email" aria-describedby="emailHelp"
-                    placeholder="Enter email here">
+                <input type="email" class="form-control" id="exampleInputEmail1" name="email"
+                    aria-describedby="emailHelp" placeholder="Enter email here">
                 <small id="emailHelp" class="form-text text-muted">We only ask this to verify you're a real
                     person.</small>
             </div>
@@ -145,21 +145,20 @@
                 <label class="inputcity" for="exampleInputcity">City</label>
                 <input type="text" class="form-control" id="exampleInputcity" name="city" placeholder=" Enter City">
             </div>
-            <center>
-                <select name="insurance">
-                    <% insurances.forEach(function(insurance){ %>
-                    <option value="<%= insurance.company %>"><%= insurance.company %></option>
-                    <% }); %>
-                </select>
-            </center>
+            <div class="form-group">
+                <label for="insurance selected" class="insurer-label">Insurer</label><br>
+                <input type="text" value="STAR Health" name="insurer" style="color: #7a7a7a;" readonly>
+            </div>
             <!-- <div class="form-group form-check">
-                <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                <label style="color: #ffffff;" class="form-check-label" for="exampleCheck1">Let's GO</label>
-            </div> -->
+            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+            <label style="color: #ffffff;" class="form-check-label" for="exampleCheck1">Let's GO</label>
+        </div> -->
             <center>
                 <button type="submit" class="btn btn-primary mb-3 mt-3">Submit</button>
             </center>
         </div>
     </form>
+
 </body>
+
 </html>

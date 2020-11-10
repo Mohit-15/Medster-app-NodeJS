@@ -8,13 +8,13 @@
         crossorigin="anonymous">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
         integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/style.css">
-    <title> Medster | Register </title>
+    <link rel="stylesheet" href="css/styles.css">
+    <title> Medster | Verification </title>
 </head>
 
-<body style="background-color: #F28F32;">
-    <nav class="navbar custom-navbar fixed-top">
-        <div class="container" style="background-color:#F28F32">
+<body>
+    <nav class="navbar custom-navbar fixed-top" style="background-color:#F28F32">
+        <div class="container">
             <div class="navbar-brand">
                 <div class="brand-img">
                     <img src="images/Group 28.svg" alt="" class="d-none d-md-block" height="60px">
@@ -22,7 +22,7 @@
                 </div>
             </div>
             <div class="nav ml-auto">
-                <div class="nav-link1 my-1">
+                <div class="nav-link1">
                     <a href="" class="connect-btn">Connect</a>
                 </div>
                 <div class="nav-link nav-line"></div>
@@ -124,42 +124,25 @@
         }
     </script>
 
-    <form method="POST">
-        <div class="form-grouped">
-            <div class="form-group">
-                <label class="inputemail" for="exampleInputEmail">Email</label>
-                <input type="email" class="form-control" id="exampleInputEmail1" name="email" aria-describedby="emailHelp"
-                    placeholder="Enter email here">
-                <small id="emailHelp" class="form-text text-muted">We only ask this to verify you're a real
-                    person.</small>
+    <form name="formone" method="post">
+        <div class="d-flex justify-content-center align-items-center container" style="margin-top: 15rem;">
+            <div class="card py-5 px-3">
+                <h5 class="">Email verification</h5><span class="mobile-text">Enter the code we just send on your
+                    email address</span>
+                <div class="d-flex mt-5 " style="width: 50%; margin-left: 5rem;">
+                    <input type="text" class="form-control" autofocus="" maxlength="4" name="otp">
+                </div>
+
+                <button class="sub-otp" type="submit" name="go">Submit</button>
+                <div class="text-center mt-5 ml-0"><span class="d-block mobile-text">Don't receive the
+                        code?</span><span class="font-weight-bold text-danger cursor">Resend</span>
+                </div>
+
             </div>
-            <div class="form-group">
-                <label class="inputname" for="exampleInputname1">Name</label>
-                <input type="text" class="form-control" id="exampleInputname1" name="name" placeholder=" Enter name">
-            </div>
-            <div class="form-group">
-                <label class="inputdob" for="exampleInputdob">DoB</label>
-                <input type="date" class="form-control" id="exampleInputdob" name="dob" placeholder=" Enter DoB">
-            </div>
-            <div class="form-group">
-                <label class="inputcity" for="exampleInputcity">City</label>
-                <input type="text" class="form-control" id="exampleInputcity" name="city" placeholder=" Enter City">
-            </div>
-            <center>
-                <select name="insurance">
-                    <% insurances.forEach(function(insurance){ %>
-                    <option value="<%= insurance.company %>"><%= insurance.company %></option>
-                    <% }); %>
-                </select>
-            </center>
-            <!-- <div class="form-group form-check">
-                <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                <label style="color: #ffffff;" class="form-check-label" for="exampleCheck1">Let's GO</label>
-            </div> -->
-            <center>
-                <button type="submit" class="btn btn-primary mb-3 mt-3">Submit</button>
-            </center>
         </div>
     </form>
+
+
 </body>
+
 </html>
