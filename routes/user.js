@@ -12,18 +12,30 @@ var express = require("express"),
   bodyParser = require("body-parser");
 
 
-router.get('/users', function(req, res){
-  Insurance.find({}, function(err, all_insurances){
-    if(err){
-      return res.status(500).send({
-        msg: err.message
-      });
+router.get('/users/:insurer/', function(req, res){
+  if (req.params.insurer == "acho-insurance"){
+      res.render('Acko_insurance');
     }
-    res.render('enter_details', {'insurances': all_insurances});
+  if (req.params.insurer == "apollo-insurance"){
+      res.render('Apollo_insurance');
+    }
+  if (req.params.insurer == "star-insurance"){
+      res.render('Star_insurance');
+    }
+  if (req.params.insurer == "icici-insurance"){
+      res.render('Icici_insurance');
+    }
+  Insurance.find({}, function(err, all_insurances){
+      if(err){
+        return res.status(500).send({
+          msg: err.message
+        });
+      }
+      res.render('enter_details',{'insurances': all_insurances});
   });
 });
 
-router.post("/users", function(req, res) {
+router.post("/users/:insurer", function(req, res) {
   var user_email = req.body.email;
   User.findOne({ email: user_email }, function(err, user){
     if(user) {
