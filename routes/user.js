@@ -7,12 +7,13 @@ var express = require("express"),
   User = require('../models/user'),
   Token = require('../models/token'),
   Insurance = require('../models/insurance'),
+  Doctor = require('../models/doctor'),
   crypto = require('crypto'),
   mailer = require('nodemailer'),
   bodyParser = require("body-parser");
 
 
-router.get('/users/:insurer/', function(req, res){
+router.get('/users/:insurer', function(req, res){
   if (req.params.insurer == "acho-insurance"){
       res.render('Acko_insurance');
     }
@@ -25,14 +26,6 @@ router.get('/users/:insurer/', function(req, res){
   if (req.params.insurer == "icici-insurance"){
       res.render('Icici_insurance');
     }
-  Insurance.find({}, function(err, all_insurances){
-      if(err){
-        return res.status(500).send({
-          msg: err.message
-        });
-      }
-      res.render('enter_details',{'insurances': all_insurances});
-  });
 });
 
 router.post("/users/:insurer", function(req, res) {
@@ -121,10 +114,32 @@ router.post("/users/verification/otp", function(req, res){
                    msg: err.message 
                  }); 
                 }
-                res.redirect("/");
+                res.redirect(`/users/profile/${user.name}`);
             });
         });
       });
+});
+
+router.get("/users/profile/:username", function(req, res){
+    User.findOne({ name: req.params.username }, function(err, profile){
+    if(err){
+      return res.status(500).send({
+        msg: err.message
+      });
+    }
+    res.render('profile', {'user': profile});
+  });
+});
+
+router.get("/users/profile/:username/doctor-list/", function(req, res){
+  Doctor.find({}, function(err, all_doctors){
+      if(err){
+        return res.status(500).send({
+          msg: err.message
+        });
+      }
+      res.render('doc_board',{'doctors': all_doctors});
+  });
 });
 
 module.exports = router

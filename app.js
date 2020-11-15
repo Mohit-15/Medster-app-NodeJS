@@ -22,10 +22,12 @@ app.set("view engine", "ejs");
 app.set('views', path.join(__dirname, 'views'));
 
 const registrationRouter = require('./routes/insurance');
+const doctorRouter = require('./routes/doctor');
 const databaseRouter = require('./routes/db');
 const homeRouter = require("./routes/home");
 const userRouter = require("./routes/user");
 app.use('', registrationRouter);
+app.use('', doctorRouter);
 app.use('', databaseRouter);
 app.use('', homeRouter);
 app.use('', userRouter);
