@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
         integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
     <link rel="stylesheet" href="/css/style.css">
-    <title>Medster | Profile</title>
+    <title>Medster | Thank You </title>
 </head>
 
 <body>
@@ -123,31 +123,10 @@
             document.getElementById("navInner").classList.toggle("nav-inner-open")
         }
     </script>
-    <img src="/images/profile logo.svg" alt="" class="proflogo">
-    <section id="profile">
-        <p></p>
-        <div class="container">
-            <table>
-                <tr>
-                    <td style="padding-right: 200px"><h5><b>Name: </b></h5></td>
-                    <td><h5><%= user.name %></h5></td>
-                </tr>
-                <tr>
-                    <td><h5><b>Date of Birth: </b></h5></td>
-                    <td><h5><%= user.dob.toDateString() %></h5></td>
-                </tr>
-                <tr>
-                    <td><h5><b>City: </b></h5></td>
-                    <td><h5><%= user.city %></h5></td>
-                </tr>
-                <tr>
-                    <td><h5><b>OPD FUNDS LEFT: </b></h5></td>
-                    <td><h5><b>10,000</b></h5></td>
-                </tr>
-            </table>
-            <button type="submit" class="btn btn-primary mb-3 mt-3" onclick="location.href=window.location.href+'/doctor-list'">Doctors</button>
-        </div>
+    <section id="thanksdoc">
+        <h3>Thank You For Registering with Us<br>
+            We'll be contacting you Shortly</h3>
     </section>
-
 </body>
+
 </html>

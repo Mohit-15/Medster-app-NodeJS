@@ -9,12 +9,12 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
         integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
     <link rel="stylesheet" href="/css/style.css">
-    <title>Medster | Profile</title>
+    <title>Medster | Doctor's Registration </title>
 </head>
 
-<body>
-    <nav class="navbar custom-navbar fixed-top" style="background-color:#F28F32">
-        <div class="container">
+<body style="background-color: #F28F32;">
+    <nav class="navbar custom-navbar fixed-top">
+        <div class="container" style="background-color:#F28F32">
             <div class="navbar-brand">
                 <div class="brand-img">
                     <img src="/images/Group 28.svg" alt="" class="d-none d-md-block" height="60px">
@@ -22,7 +22,7 @@
                 </div>
             </div>
             <div class="nav ml-auto">
-                <div class="nav-link1">
+                <div class="nav-link1 ">
                     <a href="" class="connect-btn">Connect</a>
                 </div>
                 <div class="nav-link nav-line"></div>
@@ -123,31 +123,46 @@
             document.getElementById("navInner").classList.toggle("nav-inner-open")
         }
     </script>
-    <img src="/images/profile logo.svg" alt="" class="proflogo">
-    <section id="profile">
-        <p></p>
+
+    <section id="docdetails">
         <div class="container">
-            <table>
-                <tr>
-                    <td style="padding-right: 200px"><h5><b>Name: </b></h5></td>
-                    <td><h5><%= user.name %></h5></td>
-                </tr>
-                <tr>
-                    <td><h5><b>Date of Birth: </b></h5></td>
-                    <td><h5><%= user.dob.toDateString() %></h5></td>
-                </tr>
-                <tr>
-                    <td><h5><b>City: </b></h5></td>
-                    <td><h5><%= user.city %></h5></td>
-                </tr>
-                <tr>
-                    <td><h5><b>OPD FUNDS LEFT: </b></h5></td>
-                    <td><h5><b>10,000</b></h5></td>
-                </tr>
-            </table>
-            <button type="submit" class="btn btn-primary mb-3 mt-3" onclick="location.href=window.location.href+'/doctor-list'">Doctors</button>
+            <form method="POST">
+                <div class="form-grouped-doc">
+                    <div class="form-group-doc">
+                        <label class="inputemail" for="exampleInputEmail">Email</label>
+                        <input type="email" class="form-control" id="exampleInputEmail1" name="email"
+                            aria-describedby="emailHelp" placeholder="Enter email here">
+                        <small id="emailHelp" class="form-text text-muted">We only ask this to verify you're a real
+                            person.</small>
+                    </div>
+                    <div class="form-group">
+                        <label class="inputname" for="exampleInputname1">Name</label>
+                        <input type="text" class="form-control" id="exampleInputname1" name="name"
+                            placeholder=" Enter name">
+                    </div>
+                    <div class="form-group">
+                        <label class="inputspe" for="exampleInputname1">Specialization</label>
+                        <input type="text" class="form-control" id="exampleInputspe" name="specialization"
+                            placeholder=" Enter specialization">
+                    </div>
+                    <div class="form-group">
+                        <label class="inputyoe" for="exampleInputyoe">YoE</label>
+                        <input type="text" class="form-control" id="exampleInputyoe" name="yoe"
+                            placeholder=" Enter YoE">
+                    </div>
+                    <div class="form-group">
+                        <label class="inputcity" for="exampleInputcity">City</label>
+                        <input type="text" class="form-control" id="exampleInputcity" name="city"
+                            placeholder=" Enter City">
+                    </div>
+                    <center>
+                        <button type="submit" class="btn btn-primary mb-3 mt-3">Submit</button>
+                    </center>
+                </div>
+            </form>
         </div>
     </section>
 
 </body>
+
 </html>
