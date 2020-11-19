@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha2/css/bootstrap.min.css"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+        integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/styles.css">
+    <title>Medster | Home</title>
+</head>
+
+<body>
+    <section id="main">
+        <nav class="navbar custom-navbar fixed-top" style="margin-top: 0.5rem;">
+            <div class="container">
+                <div class="navbar-brand">
+                    <div class="brand-img">
+                        <img src="/images/logo medster orange.svg" alt="" class="d-none d-md-block" height="40px">
+                    </div>
+                </div>
+                <div class="nav ml-auto">
+                    <div class="nav-link1">
+                        <a href="" class="connect-btn">Connect</a>
+                    </div>
+                    <div class="nav-link nav-line"></div>
+                    <div class="nav-link" style="margin-left: 0.7rem; margin-right: -0.6rem">
+                        <button id="mobileNavBtn" class="menu"
+                            onclick="this.classList.toggle('opened');this.setAttribute('aria-expanded', this.classList.contains('opened'));openNav();"
+                            aria-label="Main Menu" style="border: none; outline: none;">
+                            <svg viewBox="0 0 100 100">
+                                <path class="line line1"
+                                    d="M 20,29.000046 H 80.000231 C 80.000231,29.000046 94.498839,28.817352 94.532987,66.711331 94.543142,77.980673 90.966081,81.670246 85.259173,81.668997 79.552261,81.667751 75.000211,74.999942 75.000211,74.999942 L 25.000021,25.000058" />
+                                <path class="line line2" d="M 20,50 H 80" />
+                                <path class="line line3"
+                                    d="M 20,70.999954 H 80.000231 C 80.000231,70.999954 94.498839,71.182648 94.532987,33.288669 94.543142,22.019327 90.966081,18.329754 85.259173,18.331003 79.552261,18.332249 75.000211,25.000058 75.000211,25.000058 L 25.000021,74.999942" />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <div id="mobileNav" class="nav-overlay d-none">
+            <div class="nav-inner" id="navInner">
+                <div class="container">
+                    <div class="main-section">
+                        <div class="nav flex-column text-right">
+                            <li class="nav-item">
+                                <a class="nav-link" href="about-us">Take the tour</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="about-us">What is this again</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="about-us">Register yourself to be invited when this
+                                    launches</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="about-us">Contact Us</a>
+                            </li>
+                        </div>
+                    </div>
+                    <div class="mobile-nav-footer">
+                        <hr>
+                        <div class="d-flex justify-content-center">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <style>
+            #mobileNav {
+                position: fixed;
+                width: 100%;
+                height: 100%;
+                z-index: 2;
+                left: 0;
+                top: 0;
+                background-color: #000000ba;
+                overflow-x: hidden;
+                transition: 350ms ease-in-out all;
+            }
+
+            #mobileNav .nav-inner {
+                position: absolute;
+                right: -30rem;
+                top: 0;
+                height: 100%;
+                width: 100%;
+                max-width: 25rem;
+                background-color: #ffffff;
+                padding-top: 30vh;
+                transition: 350ms ease-in-out all;
+            }
+
+            #mobileNav .nav-inner-open {
+                right: 0rem;
+                transition: 350ms ease-in-out all;
+            }
+
+            #mobileNav .nav-inner .main-section {
+                color: #000000;
+                font-family: "Poppins", sans-serif;
+                font-weight: 600;
+                padding-bottom: 25vh;
+            }
+
+            #mobileNav .nav-inner .main-section .nav-link {
+                color: #000000;
+            }
+
+            @media only screen and (max-width: 768px) {
+                #mobileNav .nav-inner .main-section .nav-link {
+                    font-size: 1.4rem;
+                }
+            }
+        </style>
+        <script>
+            function openNav() {
+                document.getElementById("mobileNav").classList.toggle("d-none");
+                document.getElementById("navInner").classList.toggle("nav-inner-open")
+            }
+        </script>
+        <section id="main1">
+            <div class="container">
+
+                <h1>Let's get you <span class="s1">Insured</span> </h1>
+                <p>Medster is an attempt to digitalise the process medical insurances and making it more transparent .
+                    <br>
+                    <br> Start
+                    by taking a tour of what lays ahead.
+                </p>
+                <button class="btn btn-outline-danger tour-but"  onclick="location.href='index'">TAKE THE TOUR</button>
+                <img class="d-inline-block" src="/images/main1.png" alt="" height="500px">
+            </div>
+
+
+        </section>
+        <section id="main2" style="margin-top: 17rem;">
+            <div class="container">
+                <h2>What is <span class="s1">Medster</span>?</h2>
+                <p>Medster is a claim outsourcing platform , providing better experience to both insures by processing
+                    <br><br>
+                    claims faster and to insurers helping them serve their customers better by leveraging technology.
+                </p>
+            </div>
+        </section>
+        <section id="main3">
+            <div class="container">
+                <h2> <span class="s1">Medster</span> for everyone </h2>
+                <p>If you have an insurnace policy with OPD Coverage,Well you should get on Medster . <br><br>
+
+                    Medster eliminates the reimbursement forms , that’s right. <br><br>
+                    Just book an appointment , get yousrelf checked up and walk out , we’ll take care of the rest
+                </p>
+                <img src="/images/main2.png" alt="" height="600px">
+            </div>
+        </section>
+        <section id="main4" style="margin-top: 15rem;">
+            <div class="container">
+                <span>
+                    <h2>Accroding to</h2>
+                </span>
+                <span><a href="https://www.godigit.com/health-insurance/opd-cover"><img class="img1"
+                            src="/images/digit.JPG" alt=""></a>
+                </span>
+                <img class="img2" src="/images/OPD.JPG" alt="">
+            </div>
+        </section>
+        <section id="main5">
+            <div class="container">
+                <h2><span class="s1">Medster</span> for Doctor</h2>
+                <p>Easy to navigate appointment <br><br>
+                    No dealing with cash or filling out reimbursemnt forms. <br><br>
+                    Easy acess to records thanks to PHR</p>
+                <img src="/images/main3.png" alt="" height="500px">
+            </div>
+        </section>
+        <section id="main6" style="margin-top: 20rem;">
+            <div class=" container">
+                <h2>Take the Tour</h2>
+                <p>Our platform is on the it’s building blocks. <br><br>
+                    Here’s a trailer of what you can expect
+                </p>
+                <button class="btn btn-outline-danger tour-but" onclick="location.href='index'">TAKE THE TOUR</button>
+                <img src="/images/main4.png" alt="" height="600px">
+            </div>
+        </section>
+    </section>
+    <footer>
+        <!-- <footer>
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 col-lg-7 p-1 text-center text-lg-left">
+                        <div class="footer-logos d-flex justify-content-center justify-content-lg-start">
+                            <img src="images/logo medster orange.svg" alt="">
+
+                        </div>
+                        <p class="my-4">Our team
+                            consists of experienced and
+                            hardworking social bees who breathe
+                            and live digital. Change on Facebook,
+                            Twitter, YouTube, Instagram, Google
+                            algorithm? Rest assured that we are
+                            aware of it the moment it’s out.
+                        </p>
+                        <p class="my-4">We combine our years of experience in
+                            creating integrated social solutions with
+                            creative output to generate a rich
+                            digital experience for our clients.</p>
+                    </div>
+                    <div class="col-12 col-lg-5 text-center text-lg-right">
+                        <div class="brand-market">
+                            <h4 class="mb-3">Getting The Word Out!</h4>
+                            <div class="visiting-card">
+                                <img src="https://marketingmonsters.in/wp-content/themes/twenty-twenty-child/Assets/brand-content/Visiting Card.png"
+                                    alt="">
+                            </div>
+                            <div class="social-btns">
+                                <div class="nav justify-content-center justify-content-lg-end">
+                                    <li class="nav-link"><a href=""><i class="fab fa-instagram"
+                                                aria-hidden="true"></i></a></li>
+                                    <li class="nav-link"><a href=""><i class="fab fa-facebook"
+                                                aria-hidden="true"></i></a></li>
+                                    <li class="nav-link"><a href=""><i class="fab fa-linkedin-in"
+                                                aria-hidden="true"></i></a></li>
+                                    <li class="nav-link"><a href=""><i class="fab fa-youtube"
+                                                aria-hidden="true"></i></a></li>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <hr>
+                <div class="d-lg-flex align-items-center justify-content-between">
+                    <div class="nav d-flex d-lg-none justify-content-center mb-4">
+                        <li class="nav-link">Legal</li>
+                        <li class="nav-link">Careers</li>
+                        <li class="nav-link">Site Info</li>
+                    </div>
+                    <div class="text-center text-lg-left mb-2 mb-lg-0">
+                        <li class="nav-link">© 2020 Makreting Monsters</li>
+                    </div>
+                    <div class="nav d-none d-lg-flex">
+                        <li class="nav-link">Legal</li>
+                        <li class="nav-link">Careers</li>
+                        <li class="nav-link">Site Info</li>
+                    </div>
+                </div>
+            </div>
+        </footer> -->
+    </footer>
+</body>
+
+</html>

@@ -5,6 +5,10 @@ var express = require("express"),
   bodyParser = require("body-parser");
 
 home_router.get('', function(req, res){
+  res.render('main')
+});
+
+home_router.get('/index', function(req, res){
   Insurance.find({}, function(err, all_insurances){
     if(err){
       return res.status(500).send({

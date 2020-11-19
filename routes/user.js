@@ -142,4 +142,12 @@ router.get("/users/profile/:username/doctor-list/", function(req, res){
   });
 });
 
+router.get("/users/profile/:username/medicines/", function(req, res){
+  res.render("medicines")
+});
+
+router.get("/users/profile/:username/locations/", function(req, res){
+  res.render("maps")
+});
+
 module.exports = router
